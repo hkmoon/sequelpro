@@ -90,11 +90,11 @@ typedef NSRange (*RangeOfLineIMP)(id object, SEL selector, NSRange range);
 
 		// Cache loop methods for speed
 		lineNumberForCharacterIndexSel = @selector(lineNumberForCharacterIndex:);
-		lineNumberForCharacterIndexIMP = [self methodForSelector:lineNumberForCharacterIndexSel];
+		lineNumberForCharacterIndexIMP = (LineNumberForCharacterIndexIMP) [self methodForSelector:lineNumberForCharacterIndexSel];
 		lineRangeForRangeSel = @selector(lineRangeForRange:);
 		addObjectSel = @selector(addObject:);
 		numberWithUnsignedIntegerSel = @selector(numberWithUnsignedInteger:);
-		numberWithUnsignedIntegerIMP = [NSNumber methodForSelector:numberWithUnsignedIntegerSel];
+		numberWithUnsignedIntegerIMP = (NumberWithUnsignedIntegerIMP) [NSNumber methodForSelector:numberWithUnsignedIntegerSel];
 		rangeOfLineSel = @selector(getLineStart:end:contentsEnd:forRange:);
 
 		currentNumberOfLines = 1;
@@ -527,8 +527,9 @@ typedef NSRange (*RangeOfLineIMP)(id object, SEL selector, NSRange range);
 		anIndex = 0;
 
 		// Cache loop methods for speed
-		IMP rangeOfLineIMP = [textString methodForSelector:rangeOfLineSel];
-		addObjectIMP = [lineIndices methodForSelector:addObjectSel];
+		typedef void (*TextRangeOfLineIMP)(void*, SEL, void*, void*, void*, NSRange);
+		TextRangeOfLineIMP rangeOfLineIMP = (TextRangeOfLineIMP) [textString methodForSelector:rangeOfLineSel];
+		addObjectIMP = (AddObjectIMP) [lineIndices methodForSelector:addObjectSel];
 		
 		do
 		{

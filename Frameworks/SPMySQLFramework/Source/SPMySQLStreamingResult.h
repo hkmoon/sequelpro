@@ -28,6 +28,8 @@
 //
 //  More info at <https://github.com/sequelpro/sequelpro>
 
+typedef BOOL (*IsConnected)(void*, SEL);
+
 @interface SPMySQLStreamingResult : SPMySQLResult {
 
 	// Keep a link to the parent connection for locking purposes
@@ -40,7 +42,7 @@
 	// Counts and memory length tracking
 	NSUInteger downloadedRowCount;
 
-	IMP isConnectedPtr;
+    IsConnected isConnectedPtr;
 	SEL isConnectedSelector;
 }
 

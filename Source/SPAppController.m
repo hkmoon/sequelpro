@@ -92,7 +92,12 @@
 		bundleKeyEquivalents = [[NSMutableDictionary alloc] initWithCapacity:1];
 		installedBundleUUIDs = [[NSMutableDictionary alloc] initWithCapacity:1];
 		runningActivitiesArray = [[NSMutableArray alloc] init];
-
+		
+		if (@available(macOS 10.14, *)) {
+			[NSApp setAppearance:[NSAppearance appearanceNamed:NSAppearanceNameDarkAqua]];
+		} else {
+			// Fallback on earlier versions
+		}
 		[NSApp setDelegate:self];
 	}
 

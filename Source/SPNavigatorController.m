@@ -57,7 +57,9 @@ static SPNavigatorController *sharedNavigatorController = nil;
 #ifndef SP_CODA /* unused sort func */
 static NSComparisonResult compareStrings(NSString *s1, NSString *s2, void* context)
 {
-	return (NSComparisonResult)objc_msgSend(s1, @selector(localizedCompare:), s2);
+	typedef NSComparisonResult (*send_type)(void*, SEL, void*);
+	send_type func = (send_type)objc_msgSend;
+	return (NSComparisonResult)func(s1, @selector(localizedCompare:), s2);
 }
 #endif
 
@@ -811,7 +813,10 @@ static NSComparisonResult compareStrings(NSString *s1, NSString *s2, void* conte
 
 	if ([item isKindOfClass:NSDictionaryClass]) {
 
-		NSArray *allKeys = (NSArray*)objc_msgSend(item, @selector(allKeys));
+		typedef NSArray * (*send_type)(void*, SEL);
+		send_type func = (send_type)objc_msgSend;
+		
+		NSArray *allKeys = (NSArray*)func(item, @selector(allKeys));
 
 		// If item contains more than 50 keys store the sort order and use the cached data to speed up
 		// the displaying of the tree data

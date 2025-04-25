@@ -602,7 +602,7 @@ asm(".desc ___crashreporter_info__, 0x10");
 
 	// Disable automatic reconnection, as it's handled in-framework to preserve
 	// options, encodings and connection state.
-	my_bool falseMyBool = FALSE;
+    bool falseMyBool = FALSE;
 	mysql_options(theConnection, MYSQL_OPT_RECONNECT, &falseMyBool);
 
 	// Set the connection timeout
