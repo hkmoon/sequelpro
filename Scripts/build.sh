@@ -50,17 +50,17 @@ dev_sign_resource()
 {
 	log "Signing resource: $1"
 
-	codesign -f -s 'Sequel Pro Development' "$1" 2>&1
+	codesign -f -s 'Apple Development: moon@mpi-cbg.de (SR8Q7ZD98C)' "$1" 2>&1
 }
 
 dist_sign_framework()
 {
-	codesign -f -s 'Developer ID Application: MJ Media (Y48LQG59RS)' -r "${SRCROOT}/Resources/spframeworkrequirement.bin" "$1" 2> /dev/null
+	codesign -f -s 'Apple Development: moon@mpi-cbg.de (SR8Q7ZD98C)' -r "${SRCROOT}/Resources/spframeworkrequirement.bin" "$1" 2> /dev/null
 }
 
 dist_sign_resource()
 {
-	codesign -f -s 'Developer ID Application: MJ Media (Y48LQG59RS)' -r "${SRCROOT}/Resources/sprequirement.bin" "$1" 2> /dev/null
+	codesign -f -s 'Apple Development: moon@mpi-cbg.de (SR8Q7ZD98C)' -r "${SRCROOT}/Resources/sprequirement.bin" "$1" 2> /dev/null
 }
 
 verify_signing()

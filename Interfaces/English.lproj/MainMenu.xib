@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <development version="5100" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22690"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -30,9 +29,6 @@
                             </menuItem>
                             <menuItem title="Check for Updates..." id="794">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="checkForUpdates:" target="795" id="830"/>
-                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="199">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
@@ -1055,9 +1051,9 @@ CQ
             <connections>
                 <outlet property="delegate" destination="213" id="1193"/>
             </connections>
+            <point key="canvasLocation" x="133" y="-72"/>
         </menu>
         <customObject id="213" userLabel="SPAppController" customClass="SPAppController"/>
-        <customObject id="795" customClass="SUUpdater"/>
         <menu id="956" userLabel="Dock Menu">
             <items>
                 <menuItem title="New Connection Window..." keyEquivalent="n" id="960">
@@ -1089,6 +1085,7 @@ CQ
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="132" y="-202"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="1210"/>
     </objects>

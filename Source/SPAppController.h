@@ -39,7 +39,7 @@
 @class SPBundleEditorController;
 @class SPWindowController;
 
-@interface SPAppController : NSObject <FRFeedbackReporterDelegate, NSApplicationDelegate, NSOpenSavePanelDelegate, NSFileManagerDelegate>
+@interface SPAppController : NSObject <NSApplicationDelegate, NSOpenSavePanelDelegate, NSFileManagerDelegate>
 {
 	SPAboutController *aboutController;
 	SPPreferenceController *prefsController;

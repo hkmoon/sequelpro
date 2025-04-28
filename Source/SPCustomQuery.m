@@ -668,7 +668,7 @@ typedef void (^QueryProgressHandler)(QueryProgress *);
 
 #ifndef SP_CODA /* growl */
 		// Start the notification timer to allow notifications to be shown even if frontmost for long queries
-		[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Query Finished"];
+//		[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Query Finished"];
 #endif
 
 		// Reset the current table view as necessary to avoid redraw and reload issues.
@@ -965,10 +965,10 @@ typedef void (^QueryProgressHandler)(QueryProgress *);
 
 #ifndef SP_CODA /* growl */
 			// Perform the Growl notification for query completion
-			[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Query Finished"
-			                                               description:[NSString stringWithFormat:NSLocalizedString(@"%@",@"description for query finished growl notification"), [[errorText onMainThread] string]]
-			                                                  document:tableDocumentInstance
-			                                          notificationName:@"Query Finished"];
+//			[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Query Finished"
+//			                                               description:[NSString stringWithFormat:NSLocalizedString(@"%@",@"description for query finished growl notification"), [[errorText onMainThread] string]]
+//			                                                  document:tableDocumentInstance
+//			                                          notificationName:@"Query Finished"];
 #endif
 
 			// Set up the callback if present
@@ -995,10 +995,10 @@ typedef void (^QueryProgressHandler)(QueryProgress *);
 
 #ifndef SP_CODA /* growl */
 		// Query finished Growl notification
-		[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Query Finished"
-		                                               description:[NSString stringWithFormat:NSLocalizedString(@"%@",@"description for query finished growl notification"), [[errorText onMainThread] string]]
-		                                                  document:tableDocumentInstance
-		                                          notificationName:@"Query Finished"];
+//		[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Query Finished"
+//		                                               description:[NSString stringWithFormat:NSLocalizedString(@"%@",@"description for query finished growl notification"), [[errorText onMainThread] string]]
+//		                                                  document:tableDocumentInstance
+//		                                          notificationName:@"Query Finished"];
 #endif
 
 		// Set up the callback if present

@@ -52,7 +52,7 @@
 #import "SPOSInfo.h"
 
 #import <PSMTabBar/PSMTabBarControl.h>
-#import <Sparkle/Sparkle.h>
+//#import <Sparkle/Sparkle.h>
 
 @interface SPAppController ()
 
@@ -139,7 +139,7 @@
 	prefsController = [[SPPreferenceController alloc] init];
 
 	// Set Sparkle delegate
-	[[SUUpdater sharedUpdater] setDelegate:self];
+//	[[SUUpdater sharedUpdater] setDelegate:self];
 
 	// Register SPAppController as services provider
 	[NSApp setServicesProvider:self];
@@ -173,10 +173,10 @@
 	[[NSDistributedNotificationCenter defaultCenter] addObserver:self selector:@selector(externalApplicationWantsToOpenADatabaseConnection:) name:@"ExternalApplicationWantsToOpenADatabaseConnection" object:nil];
 	
 	// Set ourselves as the crash reporter delegate
-	[[FRFeedbackReporter sharedReporter] setDelegate:self];
+//	[[FRFeedbackReporter sharedReporter] setDelegate:self];
 
 	// Report any crashes
-	[[FRFeedbackReporter sharedReporter] reportIfCrash];
+//	[[FRFeedbackReporter sharedReporter] reportIfCrash];
 
 	[self reloadBundles:self];
     [self _copyDefaultThemes];
@@ -2225,24 +2225,24 @@
  * Sparkle updater delegate method. Called just before the updater relaunches Sequel Pro and we need to make
  * sure that no sheets are currently open, which will prevent the app from being quit. 
  */
-- (void)updaterWillRelaunchApplication:(SUUpdater *)updater
-{	
-	// Sparkle might call this on a background thread, but calling endSheet: from a bg thread is unhealthy
-	if(![NSThread isMainThread]) return [[self onMainThread] updaterWillRelaunchApplication:updater];
-
-	// Get all the currently open windows and their attached sheets if any
-	NSArray *windows = [NSApp windows];
-	
-	for (NSWindow *window in windows)
-	{
-		NSWindow *attachedSheet = [window attachedSheet];
-		
-		if (attachedSheet) {
-			[NSApp endSheet:attachedSheet returnCode:0];
-			[attachedSheet orderOut:nil];
-		}
-	}
-}
+//- (void)updaterWillRelaunchApplication:(SUUpdater *)updater
+//{	
+//	// Sparkle might call this on a background thread, but calling endSheet: from a bg thread is unhealthy
+//	if(![NSThread isMainThread]) return [[self onMainThread] updaterWillRelaunchApplication:updater];
+//
+//	// Get all the currently open windows and their attached sheets if any
+//	NSArray *windows = [NSApp windows];
+//	
+//	for (NSWindow *window in windows)
+//	{
+//		NSWindow *attachedSheet = [window attachedSheet];
+//		
+//		if (attachedSheet) {
+//			[NSApp endSheet:attachedSheet returnCode:0];
+//			[attachedSheet orderOut:nil];
+//		}
+//	}
+//}
 
 /**
  * If Sequel Pro is terminating kill all running BASH scripts and release all HTML output controller.

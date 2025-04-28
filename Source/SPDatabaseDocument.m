@@ -537,10 +537,10 @@ static BOOL isOSAtLeast10_14;
 		serverDisplayName = [parentTabViewItem label];
 	}
 
-	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Connected"
-	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Connected to %@", @"description for connected growl notification"), serverDisplayName]
-	                                                  document:self
-	                                          notificationName:@"Connected"];
+//	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Connected"
+//	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Connected to %@", @"description for connected growl notification"), serverDisplayName]
+//	                                                  document:self
+//	                                          notificationName:@"Connected"];
 
 	// Init Custom Query editor with the stored queries in a spf file if given.
 	[spfDocData setObject:@NO forKey:@"save_editor_content"];
@@ -1959,10 +1959,10 @@ static BOOL isOSAtLeast10_14;
 		[pb setString:createSyntax forType:NSStringPboardType];
 
 		// Table syntax copied Growl notification
-		[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Syntax Copied"
-		                                               description:[NSString stringWithFormat:NSLocalizedString(@"Syntax for %@ table copied", @"description for table syntax copied growl notification"), [self table]]
-		                                                  document:self
-		                                          notificationName:@"Syntax Copied"];
+//		[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Syntax Copied"
+//		                                               description:[NSString stringWithFormat:NSLocalizedString(@"Syntax for %@ table copied", @"description for table syntax copied growl notification"), [self table]]
+//		                                                  document:self
+//		                                          notificationName:@"Syntax Copied"];
 
 		return;
 	}
@@ -2467,10 +2467,10 @@ static BOOL isOSAtLeast10_14;
 		[pb setString:createSyntax forType:NSStringPboardType];
 
 		// Table syntax copied Growl notification
-		[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Syntax Copied"
-		                                               description:[NSString stringWithFormat:NSLocalizedString(@"Syntax for %@ table copied", @"description for table syntax copied growl notification"), [self table]]
-		                                                  document:self
-		                                          notificationName:@"Syntax Copied"];
+//		[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Syntax Copied"
+//		                                               description:[NSString stringWithFormat:NSLocalizedString(@"Syntax for %@ table copied", @"description for table syntax copied growl notification"), [self table]]
+//		                                                  document:self
+//		                                          notificationName:@"Syntax Copied"];
 	}
 }
 
@@ -2662,10 +2662,10 @@ static BOOL isOSAtLeast10_14;
 
 #ifndef SP_CODA /* growl */
 	// Disconnected Growl notification
-	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Disconnected"
-	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Disconnected from %@", @"description for disconnected growl notification"), [parentTabViewItem label]]
-	                                                  document:self
-	                                          notificationName:@"Disconnected"];
+//	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Disconnected"
+//	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Disconnected from %@", @"description for disconnected growl notification"), [parentTabViewItem label]]
+//	                                                  document:self
+//	                                          notificationName:@"Disconnected"];
 #endif
 }
 

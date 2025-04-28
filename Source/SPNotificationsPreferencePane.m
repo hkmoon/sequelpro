@@ -48,7 +48,7 @@ static NSString *_runningApplicationsKeyPath = @"runningApplications";
 													 name:GROWL_IS_READY
 												   object:nil];
 		// we need to initialize the GrowlApplicationBridge for the notification to actually work
-		[SPGrowlController sharedGrowlController];
+//		[SPGrowlController sharedGrowlController];
 		// Growl doesn't tell use when it exits (even though they DO monitor it).
 		// This code replicates what it does internally.
 		[[NSWorkspace sharedWorkspace] addObserver:self
@@ -102,22 +102,22 @@ static NSString *_runningApplicationsKeyPath = @"runningApplications";
 
 - (void)updateGrowlStatusLabel
 {
-	NSString *text;
-	if([GrowlApplicationBridge isGrowlRunning]) {
-		text = NSLocalizedString(@"Growl will be used for sending notifications.\nAdvanced settings can be configured via Growl.",@"Preferences : Notifications : growl status text : growl installed and running");
-	}
-	else {
-		text = @"";
-		
-		if(NSClassFromString(@"NSUserNotificationCenter")) { //this is what growl does
-			//10.8+
-			text = NSLocalizedString(@"Notification Center will be used for sending notifications. ",@"Preferences : Notifications : growl status text : growl not installed, Apple's Notificiation Center is used instead. (KEEP the SPACE at the end)");
-		}
-		//else case would be embedded growl ("Mist", 10.6 - 10.7), but telling that would IMHO be more confusing for the user.
-		
-		text = [text stringByAppendingString:NSLocalizedString(@"Install Growl for advanced control over notifications.",@"Preferences : Notifications : growl status text : additional hint when embedded Growl ('Mist') or Notification Center is used.")];
-	}
-	[growlStatusLabel setStringValue:text];
+//	NSString *text;
+//	if([GrowlApplicationBridge isGrowlRunning]) {
+//		text = NSLocalizedString(@"Growl will be used for sending notifications.\nAdvanced settings can be configured via Growl.",@"Preferences : Notifications : growl status text : growl installed and running");
+//	}
+//	else {
+//		text = @"";
+//		
+//		if(NSClassFromString(@"NSUserNotificationCenter")) { //this is what growl does
+//			//10.8+
+//			text = NSLocalizedString(@"Notification Center will be used for sending notifications. ",@"Preferences : Notifications : growl status text : growl not installed, Apple's Notificiation Center is used instead. (KEEP the SPACE at the end)");
+//		}
+//		//else case would be embedded growl ("Mist", 10.6 - 10.7), but telling that would IMHO be more confusing for the user.
+//		
+//		text = [text stringByAppendingString:NSLocalizedString(@"Install Growl for advanced control over notifications.",@"Preferences : Notifications : growl status text : additional hint when embedded Growl ('Mist') or Notification Center is used.")];
+//	}
+//	[growlStatusLabel setStringValue:text];
 }
 
 #pragma mark -

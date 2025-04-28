@@ -363,10 +363,10 @@ static inline void SetOnOff(NSNumber *ref,id obj);
 - (void)displayExportFinishedGrowlNotification
 {
 	// Export finished Growl notification
-	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Export Finished" 
-												   description:[NSString stringWithFormat:NSLocalizedString(@"Finished exporting to %@", @"description for finished exporting growl notification"), exportFilename] 
-													  document:tableDocumentInstance
-											  notificationName:@"Export Finished"];
+//	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Export Finished" 
+//												   description:[NSString stringWithFormat:NSLocalizedString(@"Finished exporting to %@", @"description for finished exporting growl notification"), exportFilename] 
+//													  document:tableDocumentInstance
+//											  notificationName:@"Export Finished"];
 }
 
 #pragma mark -
@@ -1341,7 +1341,7 @@ set_input:
 	[tableDocumentInstance setQueryMode:SPImportExportQueryMode];
 
 	// Start the notification timer to allow notifications to be shown even if frontmost for long queries
-	[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Export Finished"];
+//	[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Export Finished"];
 
 	// Setup the progress sheet
 	[exportProgressTitle setStringValue:[NSString stringWithFormat:NSLocalizedString(@"Exporting %@", @"text showing that the application is importing a supplied format"), exportTypeLabel]];

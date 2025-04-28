@@ -367,7 +367,7 @@
 	NSCharacterSet *whitespaceAndNewlineCharset = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 
 	// Start the notification timer to allow notifications to be shown, even if frontmost, for long queries
-	[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Import Finished"];
+//	[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Import Finished"];
 
 	// Open a filehandle for the SQL file
 	sqlFileHandle = [SPFileHandle fileHandleForReadingAtPath:filename];
@@ -720,10 +720,10 @@
 	[[tableDocumentInstance databaseStructureRetrieval] queryDbStructureInBackgroundWithUserInfo:@{@"forceUpdate" : @YES}];
 
 	// Import finished Growl notification
-	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Import Finished"
-	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Finished importing %@", @"description for finished importing growl notification"), [filename lastPathComponent]]
-	                                                  document:tableDocumentInstance
-	                                          notificationName:@"Import Finished"];
+//	[[SPGrowlController sharedGrowlController] notifyWithTitle:@"Import Finished"
+//	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Finished importing %@", @"description for finished importing growl notification"), [filename lastPathComponent]]
+//	                                                  document:tableDocumentInstance
+//	                                          notificationName:@"Import Finished"];
 }
 
 #pragma mark -
@@ -783,7 +783,7 @@
 	[nullableNumericFieldsMapIndex removeAllIndexes];
 
 	// Start the notification timer to allow notifications to be shown even if frontmost for long queries
-	[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Import Finished"];
+//	[[SPGrowlController sharedGrowlController] setVisibilityForNotificationName:@"Import Finished"];
 
 	// Open a filehandle for the CSV file
 	csvFileHandle = [SPFileHandle fileHandleForReadingAtPath:filename];
@@ -1241,10 +1241,10 @@
 	}
 	
 	// Import finished Growl notification
-	[[SPGrowlController sharedGrowlController] notifyWithTitle:NSLocalizedString(@"Import Finished", @"title for finished importing growl notification")
-	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Finished importing %@", @"description for finished importing growl notification"), [filename lastPathComponent]]
-	                                                  document:tableDocumentInstance
-	                                          notificationName:@"Import Finished"];
+//	[[SPGrowlController sharedGrowlController] notifyWithTitle:NSLocalizedString(@"Import Finished", @"title for finished importing growl notification")
+//	                                               description:[NSString stringWithFormat:NSLocalizedString(@"Finished importing %@", @"description for finished importing growl notification"), [filename lastPathComponent]]
+//	                                                  document:tableDocumentInstance
+//	                                          notificationName:@"Import Finished"];
 
 	SPMainQSync(^{
 		if(importIntoNewTable) {
